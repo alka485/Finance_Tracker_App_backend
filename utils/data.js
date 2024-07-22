@@ -41,10 +41,17 @@ const getRandomExpense =(int) => {
     let results = [];
     for (let i = 0; i < int; i++) {
         results.push({
-            title:get
+            title: getRandomArrItem(title),
+            amount: (Math.random() * 100).toFixed(2),
+            type: 'expense',
+            date: newDate(),
+            category: getRandomArrItem(category),
+            description: getRandomArrItem(description),
         })
     }
 }
+
+module.exports = {getRandomExpense};
 
 
 
