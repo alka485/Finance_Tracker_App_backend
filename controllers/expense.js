@@ -5,7 +5,7 @@ module.exports = {
     getExpense(req,res) {
         Expense.find()
         .then((expense) => res.json(expense))
-        .catch((err) => res.status(500).json(err));
+        .catch((err) => res.status(500).json({message : 'No GET Route'}));
     },
     // add a Expense
     addExpense(req,res) {

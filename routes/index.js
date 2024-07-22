@@ -1,9 +1,10 @@
 const router = require('express').Router();
+const apiRoutes = require('./api');
 
-const expenseRouter = require('./expenseRoutes');
-const incomeRouter = require('./incomeRoutes')
+router.use('/api', apiRoutes);
 
-router.use('/expense' , expenseRouter);
-router.use('/income' ,  incomeRouter);
+router.use((req, res) => {
+  return res.send('Wrong route!');
+});
 
 module.exports = router;
