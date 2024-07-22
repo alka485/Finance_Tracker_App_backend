@@ -49,6 +49,7 @@ const getRandomExpense =(int) => {
             description: getRandomArrItem(description),
         })
     }
+    return results;
 }
 
 module.exports = {getRandomExpense};
