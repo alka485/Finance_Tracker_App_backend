@@ -6,5 +6,14 @@ module.exports = {
         Expense.find()
         .then((expense) => res.json(expense))
         .catch((err) => res.status(500).json(err));
+    },
+    // add a Expense
+    addExpense(req,res) {
+        Expense.add(req.body)
+        .then((expense) => res.json(expense))
+        .catch((err) => {
+            console.log(err);
+            return res.status(500).json(err)
+        })
     }
 }
