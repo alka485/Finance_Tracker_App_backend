@@ -44,7 +44,7 @@ const getRandomExpense =(int) => {
             title: getRandomArrItem(title),
             amount: (Math.random() * 100).toFixed(2),
             type: 'expense',
-            date: newDate(),
+            date: new Date(),
             category: getRandomArrItem(category),
             description: getRandomArrItem(description),
         })
