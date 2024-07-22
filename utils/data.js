@@ -12,5 +12,16 @@ const title = [
 ]
 
 const category = [
+    'food',
+    'income',
+    'utilities',
+    'housing',
+    'transportation',
+    'entertainment',
+    'health'
+]
+
+const description = [
     
 ]
+
