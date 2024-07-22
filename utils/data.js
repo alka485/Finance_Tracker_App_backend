@@ -22,6 +22,14 @@ const category = [
 ]
 
 const description = [
-    
+    'weekly groceries',
+    'monthly salary',
+    'monthly internet bill',
+    'monthly rent',
+    'dinner at restaurent',
+    'payment for freelance project',
+    'car servicing',
+    'monthly streaming service',
+    'monthly gym membership'
 ]
 
