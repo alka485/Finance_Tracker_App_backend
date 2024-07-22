@@ -33,3 +33,18 @@ const description = [
     'monthly gym membership'
 ]
 
+// Get a random item given an array
+const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+//Get random Expense
+const getRandomExpense =(int) => {
+    let results = [];
+    for (let i = 0; i < int; i++) {
+        results.push({
+            title:get
+        })
+    }
+}
+
+
+
