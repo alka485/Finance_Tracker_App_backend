@@ -25,5 +25,22 @@ module.exports = {
                 : res.json(expense) 
         ).then(()=> res.json({message: 'Expense Deleted'}))
          .catch((err) => res.status(500).json(err))
+    },
+    //Update Expense
+    updateExpense(req,res) {
+        Expense.findOneAndUpdate(
+            {_id:req.params.expenseId},
+            {$set:req.body},
+            {runValidators:true, new: true}
+        )
+        .then((expense) => 
+            !expense
+              ? res.status(404).json({message: "No expense with this id"})
+              : res.json(expense)
+        )
+        .catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+        })
     }
 }
