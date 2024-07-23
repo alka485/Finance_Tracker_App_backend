@@ -20,6 +20,7 @@ const incomeSchema = new Schema(
         },
         date: {
             type: Date,
+            default: Date.now,
             required: true,
             trim:true,
         },
