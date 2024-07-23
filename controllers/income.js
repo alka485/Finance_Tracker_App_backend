@@ -9,7 +9,7 @@ module.exports = {
     },
     // add a Income
     addIncome(req,res) {
-        Income.add(req.body)
+        Income.create(req.body)
         .then((income) => res.json(income))
         .catch((err) => {
             console.log(err);

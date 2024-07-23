@@ -58,7 +58,7 @@ const getRandomIncome =(int) => {
         results.push({
             title: getRandomArrItem(title),
             amount: (Math.random() * 100).toFixed(2),
-            type: 'expense',
+            type: 'income',
             date: new Date(),
             category: getRandomArrItem(category),
             description: getRandomArrItem(description),

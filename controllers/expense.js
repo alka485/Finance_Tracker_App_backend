@@ -9,7 +9,7 @@ module.exports = {
     },
     // add a Expense
     addExpense(req,res) {
-        Expense.add(req.body)
+        Expense.create(req.body)
         .then((expense) => res.json(expense))
         .catch((err) => {
             console.log(err);
