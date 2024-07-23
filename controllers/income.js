@@ -1,4 +1,4 @@
-const { Income } = require ('../models/IncomeModel')
+const  Income  = require ('../models/IncomeModel')
 
 module.exports = {
     // get all income

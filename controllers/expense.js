@@ -1,4 +1,4 @@
-const { Expense } = require ('../models/ExpenseModel')
+const  Expense  = require ('../models/ExpenseModel')
 
 module.exports = {
     // get all expense
