@@ -1,8 +1,8 @@
-const { log } = require('console');
+
 const {connect , connection } = require ('mongoose');
 
 const connectionString = 
-process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/financeTracker';
+process.env.MONGODB_URI || 'mongodb://localhost:27017/financeTracker';
 
 connect(connectionString, {
     useNewUrlParser: true,
