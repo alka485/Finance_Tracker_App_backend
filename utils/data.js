@@ -27,7 +27,7 @@ const description = [
     'monthly internet bill',
     'monthly rent',
     'dinner at restaurent',
-    'payment for freelance project',
+    'freelance project',
     'car servicing',
     'monthly streaming service',
     'monthly gym membership'
@@ -52,7 +52,23 @@ const getRandomExpense =(int) => {
     return results;
 }
 
-module.exports = {getRandomExpense};
+const getRandomIncome =(int) => {
+    let results = [];
+    for (let i = 0; i < int; i++) {
+        results.push({
+            title: getRandomArrItem(title),
+            amount: (Math.random() * 100).toFixed(2),
+            type: 'expense',
+            date: new Date(),
+            category: getRandomArrItem(category),
+            description: getRandomArrItem(description),
+        })
+    }
+    return results;
+}
+
+
+module.exports = {getRandomExpense , getRandomIncome};
 
 
 
