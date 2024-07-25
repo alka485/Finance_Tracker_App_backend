@@ -23,8 +23,7 @@ module.exports = {
             !income
                 ? res.status(404).json({message: 'No income with this id'})
                 : res.json(income) 
-        ).then(()=> res.json({message: 'Income Deleted'}))
-         .catch((err) => res.status(500).json(err))
+        ).catch((err) => res.status(500).json(err))
     },
     //Update Income
     updateIncome(req,res) {
