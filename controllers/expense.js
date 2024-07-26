@@ -23,8 +23,7 @@ module.exports = {
             !expense
                 ? res.status(404).json({message: 'No expense with this id'})
                 : res.json(expense) 
-        ).then(()=> res.json({message: 'Expense Deleted'}))
-         .catch((err) => res.status(500).json(err))
+        ).catch((err) => res.status(500).json(err))
     },
     //Update Expense
     updateExpense(req,res) {
