@@ -11,10 +11,10 @@ module.exports = {
     // add a Expense
     addExpense : [
         //Validation rules
-    check('name', 'Name is required').notEmpty(),
-    check('amount', 'Amount must be a number').isNumeric(),
-    check('date', 'Date is required').notEmpty(),
-    
+    // check('name', 'Name is required').notEmpty(),
+    // check('amount', 'Amount must be a number').isNumeric(),
+    // check('date', 'Date is required').notEmpty(),
+    check('name','amount','date').notEmpty().withMessage('All fields are required'),
     (req,res) => {
          // Check for validation errors
          const errors = validationResult(req);
