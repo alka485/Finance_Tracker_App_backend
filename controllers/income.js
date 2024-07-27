@@ -1,3 +1,4 @@
+const {check , validationResult} = require('express-validator');
 const  Income  = require ('../models/IncomeModel')
 
 module.exports = {
