@@ -1,3 +1,4 @@
+const {check , validationResult} = require('express-validator');
 const  Expense  = require ('../models/ExpenseModel')
 
 module.exports = {
@@ -8,7 +9,19 @@ module.exports = {
         .catch((err) => res.status(500).json({message : 'No GET Route'}));
     },
     // add a Expense
-    addExpense(req,res) {
+    addExpense : [
+        //Validation rules
+    check('name', 'Name is required').notEmpty(),
+    check('amount', 'Amount must be a number').isNumeric(),
+    check('date', 'Date is required').notEmpty(),
+    
+    (req,res) => {
+         // Check for validation errors
+         const errors = validationResult(req);
+         if (!errors.isEmpty()) {
+         return res.status(400).json({ errors: errors.array() });
+        } 
+         // If no errors, proceed with creating expense 
         Expense.create(req.body)
         .then((expense) => res.json(expense))
         .catch((err) => {
@@ -16,6 +29,7 @@ module.exports = {
             return res.status(500).json(err)
         })
     },
+],
      //delete a Expense
      deleteExpense(req,res) {
         Expense.findOneAndDelete({_id:req.params.expenseid})
