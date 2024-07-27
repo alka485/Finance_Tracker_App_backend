@@ -23,7 +23,7 @@ module.exports = {
             return res.status(500).json({message : 'Server Error'})
         })
     },
-]
+],
      //delete a Income
      deleteIncome(req,res) {
         Income.findOneAndDelete({_id:req.params.incomeid})
