@@ -8,7 +8,14 @@ module.exports = {
         .catch((err) => res.status(500).json({message : 'No GET Route'}));
     },
     // add a Income
-    addIncome(req,res) {
+    addIncome : [
+        check('name','amount','date').notEmpty().withMessage('All fields are required'),
+        (req,res)=> {
+             // Check for validation errors
+         const errors = validationResult(req);
+         if (!errors.isEmpty()) {
+         return res.status(400).json({ errors: errors.array() });
+        } 
         Income.create(req.body)
         .then((income) => res.json(income))
         .catch((err) => {
@@ -16,6 +23,7 @@ module.exports = {
             return res.status(500).json({message : 'Server Error'})
         })
     },
+]
      //delete a Income
      deleteIncome(req,res) {
         Income.findOneAndDelete({_id:req.params.incomeid})
