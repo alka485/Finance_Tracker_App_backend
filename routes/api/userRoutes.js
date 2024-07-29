@@ -1,5 +1,5 @@
 const router = require('express').Router() ;
-const {registerUser} = ("../../controllers/user.js")
+const {registerUser} = require("../../controllers/user.js")
 
 // /api/signup
 router.route('/').post(registerUser);
