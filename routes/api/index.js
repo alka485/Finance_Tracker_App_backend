@@ -7,6 +7,7 @@ const userRouter = require('./userRoutes');
 router.use('/expense' , expenseRouter);
 router.use('/income' ,  incomeRouter);
 router.use('/signup', userRouter);
+router.use('/signin', userRouter)
 
 
 module.exports = router;
