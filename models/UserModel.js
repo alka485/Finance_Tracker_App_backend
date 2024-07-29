@@ -4,8 +4,8 @@ const userSchema = new Schema (
     {
         email: {
             type: String,
-            reruired:true,
-            unique: true,
+            required:true,
+            //unique: true,
         },
         password: {
             type: String,

@@ -33,6 +33,22 @@ const description = [
     'monthly gym membership'
 ]
 
+const email = [
+    'john.doe@example.com',
+    'jane.smith@example.com',
+    'alice.johnson@example.com',
+    'bob.brown@example.com',
+    'mishra.ravi@example.com'
+]
+
+// const password =[
+//     'password123',
+//     'test123',
+//     'password12345',
+//     'password12',
+//     'test1234'
+// ]
+
 // Get a random item given an array
 const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
@@ -66,6 +82,19 @@ const getRandomIncome =(int) => {
     }
     return results;
 }
+
+const getRandomUser = (int)=>{
+    let results = [];
+    for(let i = 0; i < int ; i++) {
+        results.push({
+            email : getRandomArrItem(email),
+            password : "password123"
+        })
+    }
+    return results;
+}
+
+
 
 
 module.exports = {getRandomExpense , getRandomIncome};
