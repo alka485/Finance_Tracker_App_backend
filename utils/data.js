@@ -83,16 +83,7 @@ const getRandomIncome =(int) => {
     return results;
 }
 
-const getRandomUser = (int)=>{
-    let results = [];
-    for(let i = 0; i < int ; i++) {
-        results.push({
-            email : getRandomArrItem(email),
-            password : "password123"
-        })
-    }
-    return results;
-}
+
 
 
 
