@@ -9,15 +9,8 @@ module.exports = {
         .catch((err) => res.status(500).json({message : 'No GET Route'}));
     },
     // add a Income
-    addIncome : 
-        // check('name','amount','date','category','desription').notEmpty().withMessage('All fields are required'),
-        (req,res)=> {
-             // Check for validation errors
-         //const errors = validationResult(req);
-        //  if (!errors.isEmpty()) {
-        //  return res.status(400).json({ errors: errors.array() });
-        // } 
-        Income.create(req.body)
+    addIncome : (req,res)=> {
+      Income.create(req.body)
         .then((income) => res.json(income))
         .catch((err) => {
             console.log(err);
