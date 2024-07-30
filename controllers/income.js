@@ -10,7 +10,7 @@ module.exports = {
     },
     // add a Income
     addIncome : [
-        check('name','amount','date').notEmpty().withMessage('All fields are required'),
+        check('name','amount','date','category','desription').notEmpty().withMessage('All fields are required'),
         (req,res)=> {
              // Check for validation errors
          const errors = validationResult(req);
