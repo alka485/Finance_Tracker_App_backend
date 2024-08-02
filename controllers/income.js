@@ -30,19 +30,21 @@ module.exports = {
     //Update Income
     updateIncome(req,res) {
         Income.findOneAndUpdate(
-            {_id:req.params.incomeId},
+            {_id:req.params.incomeid},
             {$set:req.body},
-            {runValidators:true, new: true}
+            {runValidators:true, new: true},
+            console.log(_id)
         )
-        .then((income) => 
-            !income
+        .then((_id) => 
+            !_id
               ? res.status(404).json({message: "No income with this id"})
-              : res.json(income)
+              : res.json(_id)
         )
         .catch((err) => {
             console.log(err);
             res.status(500).json(err);
         })
+        
     }
 
 }
