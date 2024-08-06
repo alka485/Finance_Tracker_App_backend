@@ -1,8 +1,11 @@
-
+const dotenv = require('dotenv')
 const {connect , connection } = require ('mongoose');
 
-const connectionString = 
-process.env.MONGODB_URI || 'mongodb://localhost:27017/financeTracker';
+dotenv.config()
+
+console.log(process.env.MONGO_URI);
+
+const connectionString = process.env.MONGO_URI ;
 
 connect(connectionString, {
     useNewUrlParser: true,
